@@ -1,7 +1,8 @@
 //En este archivo se va a  crear la base de dato con sequelize
 require("dotenv").config();
 const { Sequelize } = require("sequelize");
-const { DB_USER, DB_PASSWORD, DB_HOST, DB_NAME, DB_DEPLOY } = process.env;
+// const { DB_USER, DB_PASSWORD, DB_HOST, DB_NAME} = process.env;
+const { DB_DEPLOY } = process.env;
 
 const fs = require("fs");
 const path = require("path");
