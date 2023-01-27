@@ -19,7 +19,19 @@ module.exports = (sequelize)=>{
         receiver:{
             type:DataTypes.STRING,
 
-        }
+        },
+        Image:{
+            type:DataTypes.TEXT,
+            allowNull:true
+        },
+        Video:{
+          type:DataTypes.TEXT,
+          allowNull:true
+        },
+        type:{
+            type:DataTypes.STRING,
+        },
+        
 
 
     });
