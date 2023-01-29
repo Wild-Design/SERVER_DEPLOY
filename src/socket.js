@@ -46,7 +46,7 @@ module.exports = function initialSocket(httpServer) {
       const concat = message.concat(messageGroup);
 
       socket.broadcast.emit("users", users);
-      // socket.emit("users", users);
+      socket.emit("users", users);
       socket.emit(user.email, { myData, message: concat });
     });
 
@@ -71,6 +71,7 @@ module.exports = function initialSocket(httpServer) {
           socket.broadcast.emit(receiver, { msj: dataValues });
           // io.to(receiver).emit({ msj:dataValues});
         } else {
+          socket.emit("group", dataValues);
           socket.broadcast.emit("group", dataValues);
         }
       }
