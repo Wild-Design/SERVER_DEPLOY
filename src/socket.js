@@ -51,7 +51,7 @@ module.exports = function initialSocket(httpServer) {
       console.log("message", message);
       console.log("users", users);
       socket.broadcast.emit("users", users);
-      socket.emit("users", users);
+      // socket.emit("users", users);
       socket.emit(user.email, { myData, message: concat });
     });
 
