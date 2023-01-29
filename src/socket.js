@@ -32,8 +32,6 @@ module.exports = function initialSocket(httpServer) {
 
     //JOIN
     socket.on("join", async (user) => {
-      console.log("join");
-
       //IMPLEMENTACIÖN DE LOS NUEVO
 
       //verifico y devuelvo usuarios actualizados.
@@ -46,10 +44,7 @@ module.exports = function initialSocket(httpServer) {
       //obtengo todos los mensajes del grupo.
       const messageGroup = await getMessagesGroup();
       const concat = message.concat(messageGroup);
-      await getUsers();
 
-      console.log("message", message);
-      console.log("users", users);
       socket.broadcast.emit("users", users);
       // socket.emit("users", users);
       socket.emit(user.email, { myData, message: concat });
