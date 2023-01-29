@@ -18,7 +18,7 @@ let io;
 module.exports = function initialSocket(httpServer) {
   io = new Server(httpServer, {
     cors: {
-      origin: "*",
+      origin: "https://serverdeploy-production.up.railway.app/",
     },
   });
 
