@@ -46,7 +46,10 @@ module.exports = function initialSocket(httpServer) {
       //obtengo todos los mensajes del grupo.
       const messageGroup = await getMessagesGroup();
       const concat = message.concat(messageGroup);
+      await getUsers();
 
+      console.log("message", message);
+      console.log("users", users);
       socket.emit(user.email, { myData, message: concat });
       socket.broadcast.emit("users", users);
     });
