@@ -45,6 +45,7 @@ module.exports = function initialSocket(httpServer) {
       const messageGroup = await getMessagesGroup();
       const concat = message.concat(messageGroup);
 
+      await getUsers();
       socket.broadcast.emit("users", users);
       socket.emit("users", users);
       socket.emit(user.email, { myData, message: concat });
