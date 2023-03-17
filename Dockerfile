@@ -1,7 +1,7 @@
 ### Dockerfile - PreConfigurado 
 #
-# docker build -t smagarinos89/wild-backend-prj01 .
-# docker push smagarinos89/wild-backend-prj01
+# docker build -t smagarinos89/talkap-backend .
+# docker push smagarinos89/talkap-backend
 #
 FROM node:19
 
